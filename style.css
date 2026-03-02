@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #e2f0ff;
+  text-align: center;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #7facd6;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.07);
+  color: #e2f0ff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.search-box input::placeholder {
+  color: #5a7fa8;
+}
+
+.search-box input:focus {
+  border-color: rgba(100, 180, 255, 0.5);
+}
+
+.search-box button {
+  padding: 14px 24px;
+  background: #4a90d9;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.search-box button:hover {
+  background: #357abd;
+}
+
+.search-box button:active {
+  transform: scale(0.97);
+}
+
+/* Error */
+.error {
+  background: rgba(255, 80, 80, 0.15);
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  color: #ff9494;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+/* Weather Card */
+.weather-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.city-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e2f0ff;
+  margin-bottom: 4px;
+}
+
+.temp {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #64c8ff;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.condition {
+  font-size: 1rem;
+  color: #7facd6;
+  text-transform: capitalize;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.details {
+  display: flex;
+  gap: 12px;
+}
+
+.detail-box {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.detail-box .label {
+  display: block;
+  font-size: 0.75rem;
+  color: #5a7fa8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.detail-box .value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #c8e0f8;
+}
+
+/* History */
+.history-section {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.history-header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #7facd6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.history-header button {
+  background: transparent;
+  border: 1px solid rgba(255,100,100,0.3);
+  color: #ff9494;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.history-header button:hover {
+  background: rgba(255,100,100,0.1);
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.history-tag {
+  background: rgba(74, 144, 217, 0.2);
+  border: 1px solid rgba(74, 144, 217, 0.3);
+  color: #9dccf0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.history-tag:hover {
+  background: rgba(74, 144, 217, 0.35);
+}
+
+.history-empty {
+  color: #3d5a78;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
