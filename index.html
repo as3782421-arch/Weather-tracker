@@ -3,50 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather Tracker</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <title>Async Weather Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <div class="container">
-    <h1 class="title">🌤 Weather Tracker</h1>
-    <p class="subtitle">Search any city and get live weather info</p>
+  <header>
+    <h1>⛅ Async Weather Tracker</h1>
+    <p>Unit 2 · Async JS · Fetch API · Event Loop</p>
+    <div class="header-line"></div>
+  </header>
 
-    <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter city name..." />
-      <button id="searchBtn">Search</button>
-    </div>
+  <div class="grid">
 
-    <div id="errorMsg" class="error hidden">❌ City not found. Please try again.</div>
-
-    <div id="weatherCard" class="weather-card hidden">
-      <div class="city-name" id="cityName"></div>
-      <div class="temp" id="temp"></div>
-      <div class="condition" id="condition"></div>
-      <div class="details">
-        <div class="detail-box">
-          <span class="label">Humidity</span>
-          <span id="humidity" class="value"></span>
-        </div>
-        <div class="detail-box">
-          <span class="label">Wind</span>
-          <span id="wind" class="value"></span>
-        </div>
-        <div class="detail-box">
-          <span class="label">Feels Like</span>
-          <span id="feelsLike" class="value"></span>
-        </div>
+    <!-- Search Panel -->
+    <div class="panel">
+      <div class="panel-label">// Search City</div>
+      <div class="search-row">
+        <input id="cityInput" type="text" placeholder="Delhi, London, Tokyo…" autocomplete="off"/>
+        <button id="searchBtn" onclick="handleSearch()">SEARCH</button>
+      </div>
+      <div class="history-section">
+        <div class="history-title">// Search History</div>
+        <div id="historyTags"></div>
       </div>
     </div>
 
-    <div id="historySection" class="history-section">
-      <div class="history-header">
-        <h3>Recent Searches</h3>
-        <button id="clearBtn">Clear All</button>
+    <!-- Weather Info Panel -->
+    <div class="panel">
+      <div class="panel-label">// Weather Info</div>
+      <div id="weatherBox">
+        <div class="weather-empty">— Awaiting city input —</div>
       </div>
-      <div id="historyList" class="history-list"></div>
     </div>
+
+    <!-- Console Panel -->
+    <div class="panel console-panel">
+      <div class="console-header">
+        <div class="panel-label">// Console – Event Loop</div>
+        <button class="clear-btn" onclick="clearConsole()">CLEAR</button>
+      </div>
+      <div id="consoleLog"></div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
